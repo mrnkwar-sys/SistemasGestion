@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+    DateTime horaActual = DateTime.Now;
+
+    //Días de la semana para las columnas
+    string[] arrayDias = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes" };
+
+    //Matriz de 7 filas (franjas horarias) por 5 columnas (días)
+    string[,] arrayHorario = {
+        { "PSEP", "PSEP", "ACDAT", "Recreo", "ACDAT", "SGEMP", "SGEMP" },
+        { "DEINT", "DEINT", "PMDMO", "Recreo", "PMDMO", "PMDMO", "IPE2" },
+        { "SGEMP", "SGEMP", "IPE2", "Recreo", "IPE2", "DEINT", "DEINT" },
+        { "ACDAT", "ACDAT", "INGLÉS", "Recreo", "INGLÉS", "UNITY", "UNITY" },
+        { "PROY", "PROY", "PSEP", "Recreo", "UNITY", "DEINT", "DEINT" },
+    };
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Mi horario de clase</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <table id="tablaHorario">
+        <thead>
+
+        </thead>
+    </table>
+</div>

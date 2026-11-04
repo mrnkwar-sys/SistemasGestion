@@ -7,7 +7,7 @@ public class clsPersona
     public DateTime FechaNacimiento { get; set; }
     public int Edad { get; set; }
 
-    public clsPersona(string nombre, string apellidos, DateTime fechaNacimiento, int edad)
+    public clsPersona(string nombre, string apellidos, DateTime fechaNacimiento, int edad, string v, int v1)
     {
 
         Nombre = nombre;
