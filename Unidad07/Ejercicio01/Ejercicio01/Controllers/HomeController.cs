@@ -1,4 +1,5 @@
 using Ejercicio01.Models;
+using Ejercicio01.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -9,15 +10,18 @@ namespace Ejercicio01.Controllers
 
         public IActionResult Index()
         {
-            ViewData["HoraActual"] = DateTime.Now.Hour;
+            clsPersona misDatos = new clsPersona(1, "Raquel", "Nkwar");
+            ViewBag.Persona = misDatos;
+
+            int horaActual = DateTime.Now.Hour;
 
             ViewBag.FechaActualLarga = DateTime.Now;
 
-            if (DateTime.Now.Hour < 12)
+            if (horaActual < 12)
             {
                 ViewData["Saludo"] = "Buenos días";
             }
-            else if (DateTime.Now.Hour < 18)
+            else if (horaActual < 18)
             {
                 ViewData["Saludo"] = "Buenas tardes";
             }
@@ -25,6 +29,8 @@ namespace Ejercicio01.Controllers
             {
                 ViewData["Saludo"] = "Buenas noches";
             }
+
+            ViewBag.FechaActualLarga = DateTime.Now.ToLongDateString();
 
             return View();
         }

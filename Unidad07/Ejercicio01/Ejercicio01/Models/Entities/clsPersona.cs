@@ -6,5 +6,12 @@
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
 
+        public clsPersona(int id, string nombre, String apellidos)
+        {
+            Id = id;
+            Nombre = nombre;
+            Apellidos = apellidos;
+        }
+
     }
 }

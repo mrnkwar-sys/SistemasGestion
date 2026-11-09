@@ -2,9 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model Ejercicio01.Models.Entities.clsPersona
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Hora Actual: (Datetime)@ViewData["HoraActual"]</p>
-    <p>Fecha Actual: @ViewBag.FechaActualLarga</p>
-    <p>@ViewData["Saludo"]</p>
+    <h1>@ViewData["Saludo"]</h1>
+
+    <p><strong>Fecha:</strong> @ViewBag.FechaActualLarga</p>
+    
+    <h3>Información de la Persona</h3>
+
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Apellidos:</strong> @Model.Apellidos</p>
 </div>
