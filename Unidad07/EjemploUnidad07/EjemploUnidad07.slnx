@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Domain/Domain.csproj" />
+  <Project Path="EjemploUnidad07_Presentation/EjemploUnidad07_Presentation.csproj" />
+</Solution>

@@ -8,11 +8,11 @@ namespace Ejercicio02.Models.Data.Repositories
         {
             List<clsPersona> listaPersonas = new List<clsPersona>
             {
-                new clsPersona(1, "Raquel", "Nkwar"),
-                new clsPersona(2, "Juan", "Pérez"),
-                new clsPersona(3, "María", "García"),
-                new clsPersona(4, "Pedro", "López"),
-                new clsPersona(5, "Ana", "Martínez")
+                new clsPersona(1, "Raquel", "Nkwar", 1),
+                new clsPersona(2, "Juan", "Pérez", 2),
+                new clsPersona(3, "María", "García", 3),
+                new clsPersona(4, "Pedro", "López", 4),
+                new clsPersona(5, "Ana", "Martínez", 5)
             };
 
             return listaPersonas;

@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<Ejercicio02.Models.Entities.clsPersona>
+
+@{
+    ViewData["Title"] = Model[2].Nombre;
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+    <p><strong>Id:</strong> @Model[2].Id</p>
+    <p><strong>Nombre:</strong> @Model[2].Nombre</p>
+    <p><strong>Apellidos:</strong> @Model[2].Apellidos</p>
+    <a href="@Url.Action("listadoPersonas", "Home")" class="btn btn-primary">Volver al Listado de Personas</a>
+</div>

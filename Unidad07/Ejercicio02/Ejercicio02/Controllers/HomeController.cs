@@ -32,7 +32,7 @@ namespace Ejercicio02.Controllers
 
             ViewBag.FechaActualLarga = DateTime.Now.ToLongDateString();
 
-            return View();
+            return View(misDatos);
         }
 
         public IActionResult listadoPersonas()
@@ -40,6 +40,12 @@ namespace Ejercicio02.Controllers
             
             List<clsPersona> listaPersonas = RepositoryPersona.getListadoPersonas();
 
+            return View(listaPersonas);
+        }
+
+        public IActionResult InfoPersona()
+        {
+            List<clsPersona> listaPersonas = RepositoryPersona.getListadoPersonas();
             return View(listaPersonas);
         }
 

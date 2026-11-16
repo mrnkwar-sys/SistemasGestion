@@ -11,7 +11,7 @@
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
 
-    <table>
+    <table class="table w-50 mx-auto mt-4">
         <thead>
             <tr>
                 <th>Id</th>
@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var persona in @Model)
+            @foreach (var persona in Model)
             {
                 <tr>
                     <td>@persona.Id</td>
@@ -30,4 +30,6 @@
             }
         </tbody>
     </table>
+
+    <a href="@Url.Action("InfoPersona", "Home")" class="btn btn-primary">Ver Info de @Model[2].Nombre</a>
 </div>
