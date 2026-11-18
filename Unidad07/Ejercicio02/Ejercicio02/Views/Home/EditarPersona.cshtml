@@ -1,0 +1,36 @@
+@model Ejercicio02.Models.ViewModel.PersonasDept
+
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <h1>@ViewData["Title"]</h1>
+
+        <form>
+            <input asp-for="Persona.Id" type="hidden" />
+
+            <div class="mb-3">
+                <label asp-for="Persona.Nombre" class="form-label"></label>
+                <input asp-for="Persona.Nombre" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Persona.Apellidos" class="form-label"></label>
+                <input asp-for="Persona.Apellidos" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Persona.IdDepartamento" class="form-label">Departamento</label>
+                <select asp-for="Persona.IdDepartamento"
+                        asp-items="@(new Microsoft.AspNetCore.Mvc.Rendering.SelectList(Model.Departamentos, "IdDepartamento", "NombreDepartamento"))"
+                        class="form-select">
+                    <option value="">Seleccione un departamento</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 using Ejercicio02.Models;
 using Ejercicio02.Models.Data.Repositories;
 using Ejercicio02.Models.Entities;
+using Ejercicio02.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -10,7 +11,7 @@ namespace Ejercicio02.Controllers
     {
         public IActionResult Index()
         {
-            clsPersona misDatos = new clsPersona(1, "Raquel", "Nkwar");
+            clsPersona misDatos = new clsPersona(1, "Raquel", "Nkwar", 1);
             ViewBag.Persona = misDatos;
 
             int horaActual = DateTime.Now.Hour;
@@ -47,6 +48,15 @@ namespace Ejercicio02.Controllers
         {
             List<clsPersona> listaPersonas = RepositoryPersona.getListadoPersonas();
             return View(listaPersonas);
+        }
+
+        public IActionResult EditarPersona()
+        {
+            List<clsPersona> listaPersonas = RepositoryPersona.getListadoPersonas();
+            clsPersona persona = listaPersonas[Random.Shared.Next(listaPersonas.Count)];
+            List<clsDepartamento> departamentos = RepositoryDepartamento.getListadoDepartamentos();
+
+            return View(new PersonasDept(persona, departamentos));
         }
 
         public IActionResult Privacy()
