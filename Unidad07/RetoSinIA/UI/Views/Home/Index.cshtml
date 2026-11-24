@@ -1,0 +1,36 @@
+﻿@model List<UI.Models.ViewModels.ReservaDetalleVM>
+
+<h2>Gestión de Reservas</h2>
+<p><strong>Fecha:</strong> @ViewBag.FechaActual</p>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Cliente</th>
+			<th>Noches</th>
+			<th>Habitación</th>
+			<th>Estado</th>
+			<th>Detalles</th>
+			<th>Editar</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Reserva.Id</td>
+				<td>@item.Reserva.NombreCliente @item.Reserva.ApellidoCliente</td>
+				<td>@item.Reserva.NumeroNoches</td>
+				<td>@item.NombreHabitacion</td>
+				<td>@item.Reserva.Estado</td>
+				<td>
+					<a asp-controller="Home" asp-action="DetallesReserva" asp-route-id="@item.Reserva.Id">Detalles</a>
+				</td>
+				<td>
+					<a asp-controller="Home" asp-action="EditarReserva" asp-route-id="@item.Reserva.Id">Editar</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

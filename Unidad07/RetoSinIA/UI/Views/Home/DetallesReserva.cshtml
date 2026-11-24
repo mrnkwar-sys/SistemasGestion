@@ -1,0 +1,14 @@
+﻿@model UI.Models.ViewModels.ReservaDetalleVM
+
+<h2>Detalles de la Reserva #@Model.Reserva.Id</h2>
+
+<div>
+	<p><strong>ID de Reserva</strong> @Model.Reserva.Id</p>
+	<p><strong>Nombre:</strong> @Model.Reserva.NombreCliente</p>
+	<p><strong>Apellido:</strong> @Model.Reserva.ApellidoCliente</p>
+	<p><strong>Número de Noches:</strong> @Model.Reserva.NumeroNoches</p>
+	<p><strong>Habitación:</strong> @Model.NombreHabitacion</p>
+	<p><strong>Estado:</strong> @Model.Reserva.Estado
+</div>
+
+<a asp-controller="Home" asp-action="Index">Volver a la lista de reserva</a>

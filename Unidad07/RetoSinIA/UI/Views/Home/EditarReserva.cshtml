@@ -1,0 +1,52 @@
+﻿@model UI.Models.ViewModels.EditarReservaVM
+
+<h2>Editar Reserva #@Model.Reserva.Id</h2>
+
+<form method="post">
+	<div class="mb-3">
+		<label>ID de Reserva:</label>
+		<input type="text" name="Id" value="@Model.Reserva.Id" readonly class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label>Nombre:</label>
+		<input type="text" name="NombreCliente" value="@Model.Reserva.NombreCliente" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label>Apellidos:</label>
+		<input type="text" name="ApellidoCliente" value="@Model.Reserva.ApellidoCliente" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label>Número de noches:</label>
+		<input type="text" name="NumeroNoches" value="@Model.Reserva.NumeroNoches" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label>Tipo de habitación:</label>
+		<select name="IdHabitacion" class="form-control">
+			@foreach (var habitacion in Model.Habitaciones)
+			{
+				if (habitacion.Id == Model.Reserva.IdHabitacion)
+				{
+					<option value="@habitacion.Id" selected>@habitacion.Nombre</option>
+				}
+				else
+				{
+					<option value="@habitacion.Id">@habitacion.Nombre</option>
+				}
+			}
+		</select>
+	</div>
+
+	<div class="mb-3">
+		<label>Estado:</label>
+		<input type="text" name="Estado" value="@Model.Reserva.Estado" class="form-control" />
+	</div>
+
+	<button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+<br />
+<a asp-controller="Home" asp-action="Index">Volver a la lista de reservas</a>
